@@ -7,10 +7,10 @@ class ProductManager {
     getProducts(){
         return this.products
     }
+    
 
     addProduct( title, description, price, thumbnail, code, stock ){
         let codeIsRepeated = this.products.find(product => product.code === code)
-
         if(codeIsRepeated) {
             return console.error('Código ya existente')
         }
@@ -47,5 +47,6 @@ for (let i=0;i<=productManager.products.length;i++){
     let producto=productManager.getProductById(i);
     console.log(`Bucle que muestra el product con id: ${producto.id}`, producto);
 }
+console.log("getProducts mostrando los productos", productManager.getProducts());
   
 
